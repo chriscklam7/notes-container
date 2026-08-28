@@ -2,7 +2,7 @@
 
 ## Docker
 
-# Docker compose
+### Docker compose
 
 <details>
 <summary>Check container</summary>
