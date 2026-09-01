@@ -97,6 +97,15 @@ docker compose ps
 </details>
 
 <details>
+<summary>Build</summary>
+
+```shell
+docker compose build
+```
+
+</details>
+
+<details>
 <summary>Build and up all containers</summary>
 
 ```shell
