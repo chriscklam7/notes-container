@@ -205,9 +205,9 @@ docker compose run --rm [DOCKER_APP] [COMMAND_IN_DOCKER] > >(grep -v '\[WARNING\
 
 ```shell
 GITHUB_TOKEN=""
-$REPOSITORY_ADDRESS=""
-$REPOSITORY_USERNAME=""
-echo $GITHUB_TOKEN | docker login $REPOSITORY -u $REPOSITORY_NAME --password-stdin
+REPOSITORY_ADDRESS="ghcr.io"
+REPOSITORY_USERNAME=""
+echo $GITHUB_TOKEN | docker login $REPOSITORY_ADDRESS -u $REPOSITORY_NAME --password-stdin
 ```
 
 </details>
