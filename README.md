@@ -198,5 +198,20 @@ docker compose run --rm [DOCKER_APP] [COMMAND_IN_DOCKER] > >(grep -v '\[WARNING\
 
 <br />
 
+### Repository
+
+<details>
+<summary>Docker login</summary>
+
+```shell
+GITHUB_TOKEN=""
+$REPOSITORY_ADDRESS=""
+$REPOSITORY_USERNAME=""
+echo $GITHUB_TOKEN | docker login $REPOSITORY -u $REPOSITORY_NAME --password-stdin
+```
+
+</details>
+
+<br />
   
 ## Kubernetes
