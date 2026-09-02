@@ -218,10 +218,11 @@ echo $GITHUB_TOKEN | docker login $REPOSITORY_ADDRESS -u $REPOSITORY_USERNAME --
 ```shell
 REPOSITORY_ADDRESS="ghcr.io"
 REPOSITORY_USERNAME="chriscklam7"
+DOCKER_FILE=""
 IMAGE_NAME=""
 IMAGE_VER=1
 docker buildx build \
-  -f Dockerfile \
+  -f $DOCKER_FILE \
   --platform linux/amd64 \
   --label org.opencontainers.image.source=https://ghcr.io/$REPOSITORY_USERNAME/$IMAGE_NAME \
   -t $REPOSITORY_ADDRESS/$REPOSITORY_USERNAME/$IMAGE_NAME:$IMAGE_VER \
