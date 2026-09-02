@@ -224,7 +224,7 @@ docker buildx build \
   -f Dockerfile \
   --platform linux/amd64 \
   --label org.opencontainers.image.source=https://ghcr.io/$REPOSITORY_USERNAME/$IMAGE_NAME \
-  -t $REPOSITORY_ADDRESS/$REPOSITORY_USERNAME/$IMAGE_NAME:3 \
+  -t $REPOSITORY_ADDRESS/$REPOSITORY_USERNAME/$IMAGE_NAME:$IMAGE_VER \
   --push .
 ```
 
