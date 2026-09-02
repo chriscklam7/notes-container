@@ -201,13 +201,31 @@ docker compose run --rm [DOCKER_APP] [COMMAND_IN_DOCKER] > >(grep -v '\[WARNING\
 ### Repository
 
 <details>
-<summary>Docker login</summary>
+<summary>Login</summary>
 
 ```shell
 GITHUB_TOKEN=""
 REPOSITORY_ADDRESS="ghcr.io"
-REPOSITORY_USERNAME=""
-echo $GITHUB_TOKEN | docker login $REPOSITORY_ADDRESS -u $REPOSITORY_NAME --password-stdin
+REPOSITORY_USERNAME="chriscklam7"
+echo $GITHUB_TOKEN | docker login $REPOSITORY_ADDRESS -u $REPOSITORY_USERNAME --password-stdin
+```
+
+</details>
+
+<details>
+<summary>Build and push</summary>
+
+```shell
+REPOSITORY_ADDRESS="ghcr.io"
+REPOSITORY_USERNAME="chriscklam7"
+IMAGE_NAME=""
+IMAGE_VER=1
+docker buildx build \
+  -f Dockerfile \
+  --platform linux/amd64 \
+  --label org.opencontainers.image.source=https://ghcr.io/$REPOSITORY_USERNAME/$IMAGE_NAME \
+  -t $REPOSITORY_ADDRESS/$REPOSITORY_USERNAME/$IMAGE_NAME:3 \
+  --push .
 ```
 
 </details>
